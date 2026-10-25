@@ -1,0 +1,51 @@
+Redux and Redux Toolkit :
+
+Redux VS Redux Toolkit :
+1. Both have same purpose and Use
+2. We need to write more code in Redux having so much code complexity. So for make easy make a wrapper which is Redux Toolkit.
+3. Redux toolkit is wrapper of Redux.
+4. In Redux we need to defined Action and Reducer  but in Toolkit action and reducer come under slice. Comes in a file.
+
+Architecture :-
+——————-
+Redux Main Components :
+Action.          Reducer.            Store.          Dispatcher.          Selector.     
+
+
+        View/UI
+—————————————|————————————--------------
+|										|
+|										|
+| Dispatch							    | Subscribe
+|										|
+|										|
+Action   ———> Reducers   ———————> Store
+|				|
+| ————————— |----
+           Slice
+
+If we want to send the data to redux then we send by dispatch from UI and comes under action.
+And Action is a data that we want to store , add or save data
+Reducer helps to store the data in reducer and whenever we want that data .
+
+The major changes in redux toolkit (compare to redux) is action and reducers we use in one file and one type we use in slice : slice = action + reducer.
+Slice like food cutting slice specific eg. search slice, user authentication slice, product slice.
+
+Store : that data comes in store and we can use that data if we want from a component.
+
+Implementation :-
+————————
+Go to Redux Toolkit Website : npm install @reduxjs/toolkit react-redux 
+
+App Setup : Store, Provider, Slice
+Store : Whatever data flow through redux that store inside the store. Suppose A component data needs to pass in header or sidebar so first from A to Redux store then header or sidebar.
+Provider : Whenever I want data from Redux store to my component then we use. Provider is wrapper around the application.
+
+
+Provider <———————————————————————————---------------
+	|												|
+React App    ——> Action.   ———> Reducer. ———> Redux store
+
+Slice : Slice is basically the combination of Action and Reducer :
+           Action : Take the data from React App so that we can store in redux store
+           Reducer : Reducer update the store keep it updated, suppose we take 5 user from 200 user then update the store.
